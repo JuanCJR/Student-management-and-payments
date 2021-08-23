@@ -85,7 +85,8 @@ export const createUser = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  
+  console.log(req.body);
+
   await getConnection()
   .createQueryBuilder()
   .insert()

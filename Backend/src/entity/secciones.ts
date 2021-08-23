@@ -1,5 +1,5 @@
 import { StringifyOptions } from "querystring";
-import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToOne } from "typeorm"
+import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, ManyToOne } from "typeorm"
 import { Grados } from "./grados";
 
 @Entity()
@@ -13,7 +13,7 @@ export class Seccion {
     seccion: string;
 
     
-    @OneToOne(()=>Grados)
+    @ManyToOne(()=>Grados)
     @JoinColumn()
     grados:Grados
 }
